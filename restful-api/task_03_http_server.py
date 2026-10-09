@@ -20,7 +20,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
 
         elif self.path == '/data':
             self.send_response(200)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode('utf-8'))
@@ -33,7 +33,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
 
         elif self.path == '/info':
             self.send_response(200)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
             info_data = {
                 "version": "1.0",
